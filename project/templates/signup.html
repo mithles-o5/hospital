@@ -1,0 +1,167 @@
+{% extends "index.html" %}
+{% load static %}
+{% block start %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajaji Government Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+
+
+<!-- <div class="container"> -->
+    <header class="header">
+      <div class="logo-container">
+        <img src="static/images/TNlogojpg.jpg" alt="Hospital Logo" class="hospital-logo" />
+      </div>
+      <div class="logo">Rajaji Government Hospital</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/appointment">Appointment</a>
+        <a href="/services">Services</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+      <button class="sign-in">Sign In</button>
+    </header>
+x
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>We help people to get appointment in online</h1>
+          <p>
+            Tired of waiting in long lines at the doctor's office? Our online appointment booking service makes it easy to schedule appointments with top healthcare providers in your area. Simply select your preferred doctor, choose a convenient time, and book your appointment in just a few clicks. Enjoy the convenience of scheduling appointments from the comfort of your home or office.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img src="static/images/hero.png" alt="Character at desk" />
+        </div>
+      </section>
+
+      <!-- New section for Sign Up -->
+      <section class="your-added-section">
+        <center>
+          <h2>Sign Up</h2>
+          <p>Please Sign Up To Continue</p>
+        </center>
+        <form id="signupForm">
+          <div class="user-type">
+            <button type="button" id="patientBtn">Patient</button>
+            <button type="button" id="doctorBtn">Doctor</button>
+            <button type="button" id="adminBtn">Admin</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="sign-up">
+        <form id="registrationForm">
+          <div class="form-row">
+            <div class="form-column">
+              <label for="firstName">First Name:</label>
+              <input type="text" id="firstName" placeholder="First Name" required />
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" placeholder="Date of Birth" required />
+              <label for="email">Email:</label>
+              <input type="email" id="email" placeholder="Email" required />
+              <label for="password">Password:</label>
+              <input type="password" id="password" placeholder="Password" required />
+            </div>
+            <div class="form-column">
+              <label for="lastName">Last Name:</label>
+              <input type="text" id="lastName" placeholder="Last Name" required />
+              <label for="gender">Gender:</label>
+              <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="mobile">Mobile Number:</label>
+              <input type="tel" id="mobile" placeholder="Mobile Number" required />
+              <label for="confirmPassword">Confirm Password:</label>
+              <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+            </div>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="register-btn">Register</button>
+          </div>
+        </form>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <p>© Rajaji Government Hospital</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/appointment">Appointment</a>
+        <a href="/services">Services</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+      <div class="footer-contact">
+        <p>Contact: 000-000-000</p>
+        <p>Email: rajajihospitals@gmail.com</p>
+      </div>
+    </footer>
+  <!-- </div> -->
+
+  <script>
+    // JavaScript for handling user type selection
+    let userType = '';
+
+    document.getElementById('patientBtn').addEventListener('click', function() {
+      userType = 'Patient';
+      updateActiveButton();
+    });
+
+    document.getElementById('doctorBtn').addEventListener('click', function() {
+      userType = 'Doctor';
+      updateActiveButton();
+    });
+
+    document.getElementById('adminBtn').addEventListener('click', function() {
+      userType = 'Admin';
+      updateActiveButton();
+    });
+
+    function updateActiveButton() {
+      const buttons = document.querySelectorAll('.user-type button');
+      buttons.forEach(button => {
+        if (button.textContent === userType) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    // JavaScript for handling form submission (simple validation)
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+
+      // Here you can add your logic to submit the form data to the server
+      alert(`Registration successful! Welcome ${firstName} ${lastName}`);
+    });
+  </script>
+
+
+{% endblock %}

@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, Noto Serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ .logo-container {
+  display: flex;
+  align-items: center; 
+  gap : 0;
+}
+.hospital-logo {
+    width: 5px;
+    height: auto; 
+    /* margin : 0px; */
+    margin-right: -35px;
+  }
+  
+  .hospital-name {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin-left: 15px;
+    padding: 0;
+    /* margin: 0; */
+  }
+  
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav a {
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    background-color: #6501f1; 
+    color: white; 
+  }
+  .buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sign-in {
+    background-color: #6200ea;
+    color: white;
+    padding:  10px 25px;
+    border: none;
+    border-radius: 5px;
+  }
+  .register {
+    background-color: #334ed8;
+    color: #fff;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #d2defc;
+  }
+  
+/* .home-btn:active {
+    background-color: #6200ea;
+    transform: translateY(0);
+    color: white;
+} */
+  .hero-text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    margin-bottom: 20px;
+  }
+  
+  .tour-btn {
+    padding: 10px 20px;
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .biography {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .biography h2 {
+    font-size: 30px;
+    color: #6a0dad;
+  }
+  
+  .biography h3 {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  
+  .biography p {
+    margin: 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .see-more-btn {
+    padding: 10px 20px;
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+    
+  .hero2-image img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 1200px;
+    margin-right: 1200px;
+    margin-top: -250px; /* Moves the image 100px upwards */
+}
+
+  .footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #fff;  
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-column {
+      margin-bottom: 20px;
+    }
+  }
+  
